@@ -10,10 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "browser-sync": "^2.16.0",
     "cookie-parser": "^1.4.3",
+    "del": "^2.2.2",
     "express": "^4.14.0",
     "figlet": "^1.1.2",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-newer": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2",
     "nconf": "^0.8.4",
     "serve-favicon": "^2.3.0",
     "webpack": "^1.13.2"
