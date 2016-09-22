@@ -6,6 +6,7 @@
 
 - NodeJs
 - Npm
+- Gulp4
 - Git
 
 ### Install Dependencies
@@ -18,14 +19,17 @@ Open terminal --> Ctrl + Alt + t
  sudo npm install -g n
  sudo n stabile
  node --version // output: 6.5 or 6.6
+ sudo npm i -g gulpjs/gulp#4.0
 ```
 
 #### On Windows
-***git***  --> Download and install git --> [a link](https://git-scm.com/download/win) <br>
-***node*** -->Download and install latest version NodeJs from official site --> [a link](https://nodejs.org/en/)
+***git***   --> Download and install git --> [a link](https://git-scm.com/download/win) <br>
+***node***  --> Download and install latest version NodeJs from official site --> [a link](https://nodejs.org/en/)
 Open CMD
 ```
  node --version // output: 6.5 or 6.6
+ // install gulp4
+ npm i -g gulpjs/gulp#4.0
 ```
 
 ### git clone app
@@ -48,13 +52,13 @@ Open CMD
 ### Install package.json dependencies
 
 #### On Linux
-Open terminal --> Ctrl + Alt + t
+In terminal
 ```
  npm i
 ```
 
 #### On Windows
-Open CMD
+In CMD
 ```
  npm i
 ```
@@ -62,13 +66,13 @@ Open CMD
 ## Run app
 
 #### On Linux
-Open terminal --> Ctrl + Alt + t
+In terminal
 ```
  node app.js
 ```
 
 #### On Windows
-Open CMD
+In CMD
 ```
  node app.js
 ```
@@ -77,14 +81,14 @@ You should see log: "CONNECT"
 ### Run Gulp Task from html, css development
 
 #### On Linux
-Open terminal --> Ctrl + Alt + t
+Open new terminal --> Ctrl + Alt + t
 ```
  cd Documents/Genux/public/GenuxApp/
  gulp AccountPage:dev:mockup
 ```
 
 #### On Windows
-Open CMD
+Open new CMD
 ```
  cd Documents/Genux/public/GenuxApp/
  gulp AccountPage:dev:mockup
