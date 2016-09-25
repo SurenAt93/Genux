@@ -9,6 +9,7 @@ module.exports = {
   entry: "./main",
   output: {
       path: __dirname + "/bundle",
+      publicPath: __dirname +  '/bundle/',
       filename: "bundle.js"
   },
 

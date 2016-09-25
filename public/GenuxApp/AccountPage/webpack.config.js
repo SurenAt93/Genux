@@ -4,15 +4,22 @@ const webpak      = require('webpack');
 const path        = require('path');
 const NODE_ENV    = process.env.NODE_ENV || 'development';
 
+
+function addHash(template, hash) {
+  return NODE_ENV == 'production' ?
+    template.replace(/\.[^.]+$/, `.[${hash}]$&`): `${template}?hash[${hash}]`;
+}
+
+
 module.exports = {
   context: __dirname + "/",
 
   entry: "./mvc/app",
 
   output: {
-      path: __dirname + '/build',
+    path: __dirname + '/build',
 
-      filename: 'bundle.js'
+    filename: 'bundle.js'
   },
 
   watch: NODE_ENV == 'development',

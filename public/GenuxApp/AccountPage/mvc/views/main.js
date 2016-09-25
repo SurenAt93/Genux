@@ -19,7 +19,7 @@ export default class MainView extends View {
   }
 
   render() {
-    this.$el.append(this.template());
+    this.$el.prepend(this.template());
   }
 
 }
