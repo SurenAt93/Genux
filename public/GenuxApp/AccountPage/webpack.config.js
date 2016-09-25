@@ -1,9 +1,9 @@
 'use strict';
 
-const webpak      = require('webpack');
-const path        = require('path');
-const NODE_ENV    = process.env.NODE_ENV || 'development';
-
+const webpak              = require('webpack');
+const path                = require('path');
+const AssetsPlugin        = require('assets-webpack-plugin');
+const NODE_ENV            = process.env.NODE_ENV || 'development';
 
 function addHash(template, hash) {
   return NODE_ENV == 'production' ?
@@ -19,7 +19,7 @@ module.exports = {
   output: {
     path: __dirname + '/build',
 
-    filename: 'bundle.js'
+    filename: addHash('bundle.js', 'chunkhash')
   },
 
   watch: NODE_ENV == 'development',
@@ -33,6 +33,11 @@ module.exports = {
   plugins: [
     new webpak.DefinePlugin({
       NODE_ENV: JSON.stringify(NODE_ENV)
+    }),
+
+    new AssetsPlugin({
+      filename: 'assets.json',
+      path: path.join(__dirname, '../../../views/accountPage')
     })
   ],
 

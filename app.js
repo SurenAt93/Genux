@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 require('./routes')(app);

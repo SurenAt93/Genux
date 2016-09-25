@@ -1,5 +1,6 @@
-const path = require('path');
+const path 			= require('path');
+const assetsPaths 	= require('../views/accountPage/assets.json');
 
 module.exports.get = function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/accountPage.html'));
+  res.render('accountPage/accountPage', assetsPaths);
 }
