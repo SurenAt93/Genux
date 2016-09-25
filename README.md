@@ -8,6 +8,7 @@
 - Npm
 - Gulp4
 - Git
+- Webpack
 
 ### Install Dependencies
 
