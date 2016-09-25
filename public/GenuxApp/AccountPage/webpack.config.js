@@ -37,7 +37,7 @@ module.exports = {
       query: {
         presets: ['es2015'],
         plugins: [
-          ['transform-runtime'],
+          // ['transform-runtime'],
           ["transform-decorators-legacy"],
         ]
       }

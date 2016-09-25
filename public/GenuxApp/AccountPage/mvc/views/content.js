@@ -2,17 +2,17 @@ import { View }       from 'backbone';
 import { props }      from '../decorators/decorators';
 
 // template
-import MainViewTmpl   from '../tmpls/main'
+import ContentViewTmpl   from '../tmpls/content'
 
 @props({
-  el: 'body',
+  el: '#content',
 
   events: {
   },
 
-  template: MainViewTmpl
+  template: ContentViewTmpl
 })
-export default class MainView extends View {
+export default class ContentView extends View {
 
   initialize() {
     this.render();
