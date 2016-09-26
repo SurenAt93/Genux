@@ -21,6 +21,7 @@ Open terminal --> Ctrl + Alt + t
  sudo n stabile
  node --version // output: 6.5 or 6.6
  sudo npm i -g gulpjs/gulp#4.0
+ sudo npm i -g webpack
 ```
 
 #### On Windows
@@ -31,6 +32,8 @@ Open CMD
  node --version // output: 6.5 or 6.6
  // install gulp4
  npm i -g gulpjs/gulp#4.0
+ // install webpack
+ npm i -g webpack
 ```
 
 ### git clone app
@@ -78,6 +81,21 @@ In CMD
  node app.js
 ```
 You should see log: "CONNECT"
+### Run Webpack from compile js files
+
+#### On Linux
+Open new terminal --> Ctrl + Alt + t
+```
+ cd Documents/Genux/public/GenuxApp/AccountPage
+ webpack
+```
+
+#### On Windows
+Open new CMD
+```
+ cd Genux/public/GenuxApp/AccountPage
+ webpack
+```
 
 ### Run Gulp Task from html, css development
 
@@ -91,6 +109,6 @@ Open new terminal --> Ctrl + Alt + t
 #### On Windows
 Open new CMD
 ```
- cd Documents/Genux/public/GenuxApp/
+ cd Genux/public/GenuxApp/
  gulp AccountPage:dev:mockup
 ```
