@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<body style="background-color: #181d2d">
+  <canvas id="test" width="300" height="300" style="position: absolute;"></canvas>
+  <script type="text/javascript">
+    const WIDTH = 300;
+    const HEIGHT = 300;
+
+    var c   = document.getElementById("test");
+    var $c  = $("#test");
+    var ctx = c.getContext("2d");
+
+    function clear() {
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    }
+
+    function drow(x, y) {
+      clear();
+      ctx.beginPath();
+      ctx.arc(150, 150, 140, 0, 2*Math.PI);
+      ctx.stroke();
+    }
+    drow()                    
+
+    $(window).on('mousemove', function(e) {
+      // console.log($c.style.left);
+      $c.css('left', e.pageX); 
+      $c.css('top',  e.pageY); 
+    });
+  </script>
+</body>
+</html>
