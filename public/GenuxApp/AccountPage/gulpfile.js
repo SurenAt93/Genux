@@ -7,7 +7,7 @@ const gulpIf      = require('gulp-if');
 const sass        = require('gulp-sass');
 const newer       = require('gulp-newer');
 const del         = require('del');
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create({reloadDelay: 2000});
 const notify      = require('gulp-notify');
 const path        = require('path');
 
@@ -42,19 +42,34 @@ gulp
 
 gulp
   .task(
+    'AccountPage:js:watch',
+    function() {
+      gulp
+        .watch(
+          __dirname + '/build/*.js',
+          function(done) {
+            browserSync.reload();
+
+            done();
+          }
+        );
+    }
+  );
+
+gulp
+  .task(
     'AccountPage:browserSync:mockup',
     function() {
       browserSync.init({
-        proxy: 'localhost:3000/account'
+        proxy: 'localhost:3000/account',
+
+        // reloadDelay: 102
       });
 
       browserSync
         .watch(__dirname + '/styles/**/style.css')
         .on('change', browserSync.reload);
 
-      browserSync
-        .watch(path.join(__dirname, '../../../views/accountPage.html'))
-        .on('change', browserSync.reload);
     }
   )
 
@@ -64,6 +79,8 @@ gulp
     gulp
       .parallel(
         'AccountPage:styles:watch',
+        'AccountPage:js:watch',
         'AccountPage:browserSync:mockup'
       )
   );
+
