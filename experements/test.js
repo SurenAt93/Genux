@@ -25,6 +25,7 @@ $(document).ready(function(){
     $(window).on('mousemove', function(e) {
       if (e.pageX < 950) {
         myConstellation.clearRect();
+        myConstellation.clearStars();
         window.cancelAnimationFrame(myConstellation.requestID);
         animationFlag = false;
       } else {
@@ -32,9 +33,9 @@ $(document).ready(function(){
           myConstellation.init();
           animationFlag = true;  
         }
-        myConstellation.createStars()
-        $('canvas').css('left', e.pageX - 1100); 
-        $('canvas').css('top',  e.pageY - 150);
+        myConstellation.createStars();
+        $('#tet').css('left', e.pageX - 1100); 
+        $('#tet').css('top',  e.pageY - 150);
       }
     });
       
@@ -43,9 +44,9 @@ $(document).ready(function(){
 });
 
 function Constellation (canvas, options) {
-  var $c      = $('#test');
   var $canvas = $(canvas);
   var context = canvas.getContext('2d');
+  var ctx     = canvas.getContext('2d');
 
   var config = {
     star: {
@@ -56,10 +57,13 @@ function Constellation (canvas, options) {
       color: 'rgba(0, 255, 0, .5)',
       width: 0.4
     },
-    width: 300,
-    height: 300,
+    width: 450,
+    height: 450,
     velocity: 1,
-    length: 25,
+    velocityK: 2,
+    velocityDef: 1,
+    velocityKDef: 2,
+    length: 42,
     distance: 50,
     radius: 150,
     stars: []
@@ -71,9 +75,9 @@ function Constellation (canvas, options) {
     // it is a start position y
     this.y  = Math.random() * canvas.height;
     // it is a star speed on x
-    this.vx = (config.velocity - (Math.random() * 2));
+    this.vx = (config.velocity - (Math.random() * config.velocityK));
     // it is a star speed on y
-    this.vy = (config.velocity - (Math.random() * 2));
+    this.vy = (config.velocity - (Math.random() * config.velocityK));
     // it is start radius
     this.radius = Math.random() * config.star.width;
   }
@@ -137,13 +141,19 @@ function Constellation (canvas, options) {
     context.clearRect(0, 0, canvas.width, canvas.height);
   };
 
+  this.clearStars = function() {
+    config.stars = [];  
+  };
+
   this.createStars = function () {
     var length = config.length,
       star,
       i;
 
     for (i = 0; i < length; i++) {
-      config.stars.push(new Star());
+      if (config.stars.length < length ) {
+        config.stars.push(new Star());
+      }
       star = config.stars[i];
 
       star.create();
@@ -159,10 +169,9 @@ function Constellation (canvas, options) {
   };
 
   this.setContext = function () {
-    context.fillStyle = config.star.color;
+    context.fillStyle   = config.star.color;
     context.strokeStyle = config.line.color;
-    context.lineWidth = config.line.width;
-
+    context.lineWidth   = config.line.width;
   };
 
   this.requestID;

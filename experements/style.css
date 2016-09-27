@@ -13,6 +13,12 @@ body {
   width:    49.5%;
 }
 
+canvas {
+  z-index: -1000;
+  /*left: 75px;
+  top: 75px;*/
+}
+
 #section1 {
   background-color: #aaa;
 }
@@ -20,4 +26,34 @@ body {
 #section2 {
   position: relative;
   background-color: #eee;
+}
+
+#tet {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  position: absolute;
+  z-index: 1000;
+}
+
+#tet:before {
+  content: '';
+  border: 25px solid rgba(238, 238, 238, 0.79);
+  z-index: 1000;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  border-radius: 175px;
+  top: 25px;
+  left: 25px;
+}
+
+#tet:after {
+  content: '';
+  border: 25px solid rgba(238, 238, 238, 1);
+  z-index: 1000;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  border-radius: 200px;
 }
