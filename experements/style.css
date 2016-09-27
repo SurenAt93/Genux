@@ -1,0 +1,23 @@
+body {
+  margin:   0;
+  padding:  0;
+  overflow: hidden;
+}
+
+#section1,
+#section2 {
+  display: inline-block;
+  margin:   0;
+  padding:  0;
+  height:   100vh;
+  width:    49.5%;
+}
+
+#section1 {
+  background-color: #aaa;
+}
+
+#section2 {
+  position: relative;
+  background-color: #eee;
+}
