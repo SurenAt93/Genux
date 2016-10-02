@@ -19,6 +19,22 @@ export default class MainView extends View {
   }
 
   render() {
-    this.$el.prepend(this.template());
+    this.$el.prepend(this.template({
+      view: 'main',
+      testList: [
+        {
+          name: 'user01',
+        },
+        {
+          name: 'user02',
+        },
+        {
+          name: 'user03',
+        },
+        {
+          name: 'user04',
+        }
+      ]
+    }));
   }
 }

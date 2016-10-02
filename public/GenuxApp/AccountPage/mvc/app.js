@@ -16,7 +16,7 @@ let myTestColl = new TestColl;
 
 console.log(myTestColl);
 
-myTestColl.fetch()
+myTestColl.fetch()  
   .then(
     (values) => {
       console.log(values);
