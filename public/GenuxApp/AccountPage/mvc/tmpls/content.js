@@ -1,8 +1,12 @@
 export default function(attrs) {
   return `
-  	<h3>Content</h3>
-    <div id="tree"></div>
-    <div id="global_search"></div>
-    <div id="settings"></div>
+    <div class="header">
+      <h2>Title</h2>
+    </div>
+    <div class="genux-content">
+      <div class="content-item">
+        
+      </div>
+    </div>
   `
 }

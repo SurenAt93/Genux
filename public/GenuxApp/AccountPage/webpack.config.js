@@ -12,12 +12,12 @@ function addHash(template, hash) {
 
 
 module.exports = {
-  context: __dirname + "/",
+  context: path.resolve(__dirname, ''),
 
   entry: "./mvc/app",
 
   output: {
-    path: __dirname + '/build',
+    path: path.resolve(__dirname, 'build'),
 
     filename: addHash('bundle.js', 'chunkhash')
   },
@@ -37,7 +37,7 @@ module.exports = {
 
     new AssetsPlugin({
       filename: 'assets.json',
-      path: path.join(__dirname, '../../../views/accountPage')
+      path: path.join(__dirname, '..', '..', '..', 'views', 'accountPage')
     })
   ],
 
@@ -60,14 +60,14 @@ module.exports = {
 
   resolve: {
     modulesDirectories: [
-      path.join(__dirname, '../../../node_modules')
+      path.join(__dirname, '..', '..', '..', 'node_modules')
     ],
     extentions: ['', '.js']
   },
 
   resolveLoader: {
     modulesDirectories: [
-      path.join(__dirname, '../../../node_modules')
+      path.join(__dirname, '..', '..', '..', 'node_modules')
     ],
     moduleTemplates: ['*-loader', '*'],
     extentions: ['', '.js']

@@ -14,8 +14,6 @@ import TestColl     from './collection/testColl';
 
 let myTestColl = new TestColl;
 
-console.log(myTestColl);
-
 myTestColl.fetch()  
   .then(
     (values) => {
