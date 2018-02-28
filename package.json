@@ -39,7 +39,7 @@
     "jsdom": "^9.5.0",
     "nconf": "^0.8.4",
     "serve-favicon": "^2.3.0",
-    "webpack": "^1.13.2",
+    "webpack": "^2.2.0",
     "winston": "^2.2.0",
     "zepto": "^1.2.0"
   }
